@@ -1,0 +1,43 @@
+doctype html
+
+head
+  
+  meta(charset='utf-8')
+  link(href='https://fonts.googleapis.com/css2?family=Poppins:wght@500;700;800&display=swap' rel='stylesheet')
+  script(src='connect4.js')
+  style.
+    body{
+    font-size: 20px;
+    background-color: rgb(206, 184, 250);
+    font-family: 'Poppins', sans-serif;
+    }
+    button {
+    width: 150px;
+    padding: 0.4rem 1.25rem;
+    font-size: 1.3rem;
+    height: 50px;
+    margin: 4px;
+    }
+
+  link(rel='stylesheet' href='./connect4.css')
+  title chaily
+
+  body
+
+    h1 Log in
+
+    form(action='/loginUser' method='POST')
+      label(for="username") 
+        strong Username
+      br
+      input(type='text' placeholder='Enter Username' name='username' required='')
+      br
+      br
+      label(for="password")
+        strong Password
+      br
+      input(type='text' placeholder='Enter Password' name='password' required='')
+      br
+      br
+      button#login(class="button" style='cursor:pointer') Login
+      button#cancel(class="button" style='cursor:pointer' onclick="location.href = 'home';") Cancel

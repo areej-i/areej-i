@@ -1,0 +1,84 @@
+html(lang="en")
+	head
+		meta(charset="utf-8")
+		meta(http-equiv="X-UA Compatible" content="IE=edge")
+		title Connect 4
+		script(src="/connect4.js")
+		script(src="/help.js")
+	link(rel="stylesheet" href="/profile.css")
+	body(style="background: rgb(229, 195, 209)" onload="displayUsers(); displayFriends(); displayRequests(); displayActiveGames()")
+	#main
+		span(style="font-size:20px; cursor:pointer; text-decoration: underline;" onclick="openNav()")  Settings 
+
+		#sidenav.sidenav
+			a.closebtn(href="javascript:void(0)" onclick="closeNav()") ×
+			a(href="../changeStatus" method="GET") Change Status
+			a(href="../logOut" method="GET") Log Out
+			a(style="cursor:pointer" onclick="location.href = '../instructions';") How to Play
+
+		.topnav
+			input#myInput(type='text' style="margin-right:10px;" onkeyup="search()" placeholder='Search for users..')
+			ul#userList(style="width: 400px; margin-right:10px;")
+
+		h4 current active games
+			table
+												
+		.game
+			br
+			h3 achievements
+			label Win percentage: !{session.achievements[0]}%
+			br
+			label Total Games played: !{session.achievements[1]}
+			br 
+			h3 game history
+			table
+				tr
+					th opponent:
+					th &nbsp
+					th result:
+				tr
+					td(style="cursor:pointer; text-decoration: underline;" onclick="location.href='../users/"+session.gamesHistory[0][0]+"'") !{session.gamesHistory[0][0]}
+					td &nbsp
+					td !{session.gamesHistory[1][0]} 
+				tr
+					td(style="cursor:pointer; text-decoration: underline;" onclick="location.href='../users/"+session.gamesHistory[0][1]+"'") !{session.gamesHistory[0][1]}
+					td &nbsp
+					td !{session.gamesHistory[1][1]}
+				tr
+					td(style="cursor:pointer; text-decoration: underline;" onclick="location.href='../users/"+session.gamesHistory[0][2]+"'") !{session.gamesHistory[0][2]}
+					td &nbsp
+					td !{session.gamesHistory[1][2]}
+				tr
+					td(style="cursor:pointer; text-decoration: underline;" onclick="location.href='../users/"+session.gamesHistory[0][3]+"'") !{session.gamesHistory[0][3]}
+					td &nbsp
+					td !{session.gamesHistory[1][3]}
+				tr
+					td(style="cursor:pointer; text-decoration: underline;" onclick="location.href='../users/"+session.gamesHistory[0][4]+"'") !{session.gamesHistory[0][4]}
+					td &nbsp
+					td !{session.gamesHistory[1][4]}
+			style.
+				table 
+				{
+					width: 50%;
+				}
+			br
+			br
+			br
+			button(class='button' style="cursor:pointer" type="button" onclick="location.href = '../games';") Play Now
+		
+		.profile
+			br
+			h1 Profile !{session.username}
+			br
+			details.requestHide
+				summary Requests
+				ul#requestList(onkeyup="searchReq()")
+			br
+			if (session.online == true)
+				h2 online&nbsp!{session.status}
+			else
+				h2 offline&nbsp!{session.status}
+			br
+			br
+			input#fInput(type='text' onkeyup="searchFriends()" placeholder='Search friends..')
+			ul#friendList(style="width: 300px;")
