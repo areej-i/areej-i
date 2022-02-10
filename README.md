@@ -1,5 +1,4 @@
-┊ ┊ ┊ ┊ ┊
-┊ ┊ ✫ ˚♡ ⋆｡ ❀
+✫ ˚♡ ⋆｡ ❀
 
 Hi! I'm Areej, a computer science student who enjoys making websites and especially likes programming using C++.
 
