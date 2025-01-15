@@ -1,6 +1,6 @@
 ✫ ˚♡
 
-Hi! I'm Areej, a computer science student who enjoys making websites and especially likes programming using C++.
+Hi! I'm Areej, a computer science graduate who enjoys making websites and especially likes programming using C++.
 
 Check out some of my work!
 
